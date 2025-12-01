@@ -44,3 +44,17 @@ All work for Parts A(i) and A(ii) is included in the Jupyter notebook.
    ```bash
    pip install torch torchvision torchaudio
    pip install pandas pillow matplotlib
+Place the 10 images (img1.jpg, img2.jpeg, …, img10.jpeg) in the same folder as the notebook.
+
+Open the Jupyter notebook
+Run all cells in order:
+
+Images are loaded
+
+Both object detection models are evaluated
+
+Tables of results are generated
+
+ResNet-50 classification outputs are produced
+
+Optional visualization of bounding boxes is included
