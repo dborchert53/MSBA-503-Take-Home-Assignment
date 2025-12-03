@@ -58,3 +58,17 @@ Tables of results are generated
 ResNet-50 classification outputs are produced
 
 Optional visualization of bounding boxes is included
+
+
+HERE IS MY PROJECT STRUCTURE
+/project
+    ├── images/
+    │     ├── img1.jpg
+    │     ├── img2.jpg
+    │     └── …
+    ├── detection_loop.py
+    ├── retina.py
+    ├── faster_rcnn.py
+    ├── results.csv
+    └── Final_Project.ipynb
+
