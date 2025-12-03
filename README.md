@@ -1,66 +1,112 @@
-# MSBA 503 Take-Home Assignment – Computer Vision Object Detection
+1. Project Title
 
-## Overview
-This project applies two deep learning object detection models—**Faster R-CNN** and **RetinaNet**—to a set of 10 images in order to compare their performance. The comparison focuses on three key metrics required in the assignment:  
-1. Number of objects detected  
-2. Average and maximum confidence scores  
-3. Inference (processing) time per image  
+Object Detection on Real-World Images Using RetinaNet and Faster R-CNN
 
-Additionally, a **ResNet-50 image classification model** is used to extract the top predicted label and probability for each image as part of Part A(ii).
+2. Project Overview
 
-All work for Parts A(i) and A(ii) is included in the Jupyter notebook.
+This project applies modern computer vision models to detect objects in real-world images. I use two deep learning object-detection algorithms — RetinaNet and Faster R-CNN — to analyze 10 images collected online and compare their ability to identify objects, confidence levels, and inference speed. The results highlight how different architectures behave on the same inputs and which model performs best in everyday detection scenarios.
 
----
+3. Objectives
 
-## Models Used
-### **1. Faster R-CNN (ResNet-50 FPN)**
-- Pretrained on the COCO dataset  
-- High accuracy  
-- Slower inference time  
-- Often detects more objects at higher confidence  
+Use two deep learning algorithms for object detection
 
-### **2. RetinaNet (ResNet-50 FPN)**
-- Also pretrained on COCO  
-- Faster inference  
-- Sometimes detects fewer objects  
-- Good real-time trade-off model  
+Run predictions on 10 real-world images
 
-### **3. ResNet-50 Classification Model**
-- Used for extracting the top predicted image class and probability  
-- Complements the object detection outputs with a single high-level label  
+Compare the models across:
 
----
+Number of objects detected
 
-## Project Structure
+Confidence probabilities
 
+Inference runtime
 
-> **Note:** Images are **not uploaded** to GitHub per assignment instructions. They are expected to be placed in the same directory as the notebook when running the project.
+Consistency of detections
 
----
+Summarize the results in a comparison table
 
-## How to Run
+Provide short, clear insights (as required by professor)
 
-1. Install required libraries (run these in terminal, not inside the notebook):
-   ```bash
-   pip install torch torchvision torchaudio
-   pip install pandas pillow matplotlib
-Place the 10 images (img1.jpg, img2.jpeg, …, img10.jpeg) in the same folder as the notebook.
+4. Models Used
+Model 1 — RetinaNet
 
-Open the Jupyter notebook
-Run all cells in order:
+Pretrained on the COCO dataset
 
-Images are loaded
+Known for high accuracy with focal loss
 
-Both object detection models are evaluated
+Good at detecting small objects
 
-Tables of results are generated
+Model 2 — Faster R-CNN
 
-ResNet-50 classification outputs are produced
+Pretrained on COCO
 
-Optional visualization of bounding boxes is included
+Two-stage detector with region proposals
 
+Typically more accurate but slower
 
-HERE IS MY PROJECT STRUCTURE
+5. Dataset (Images Used)
+
+10 real images gathered online
+
+Contain objects such as: people, animals, vehicles, household items, etc.
+
+No manual labeling was done — models rely on COCO pretrained classes
+
+All images stored in the /images/ folder
+
+6. Methods
+6.1 Preprocessing
+
+Loaded images with OpenCV/Pillow
+
+Resized based on model requirements
+
+Converted images into tensors for inference
+
+6.2 Prediction Process
+
+For each image:
+
+Run RetinaNet
+
+Run Faster R-CNN
+
+Extract:
+
+Predicted object names
+
+Bounding box coordinates
+
+Confidence scores
+
+Runtime per model
+
+6.3 Evaluation Metrics
+
+Models are compared using:
+
+Object count (how many objects detected)
+
+Average confidence
+
+Inference speed
+
+Qualitative accuracy (how correct were the detections?)
+
+7. Results
+
+(You will fill this in after running your loop.)
+
+Your document will include:
+
+A comparison table summarizing all images and detections
+
+Screenshots of predictions (optional, not required)
+
+A brief write-up such as:
+
+Faster R-CNN produced slightly more accurate detections with higher confidence, but RetinaNet ran faster. RetinaNet occasionally missed smaller objects that Faster R-CNN identified. Overall, Faster R-CNN was the most accurate model, while RetinaNet balanced speed and performance.
+
+8. Code Structure
 /project
     ├── images/
     │     ├── img1.jpg
@@ -71,4 +117,37 @@ HERE IS MY PROJECT STRUCTURE
     ├── faster_rcnn.py
     ├── results.csv
     └── Final_Project.ipynb
+
+9. How to Run the Code
+1. Install dependencies
+pip install torch torchvision opencv-python pillow numpy
+
+2. Place your 10 images inside:
+/images/
+
+3. Run Final_Project.ipynb or the detection loop
+
+This will:
+
+Load both models
+
+Run predictions on all images
+
+Save outputs into results.csv
+
+10. Insights & Limitations
+
+Pretrained models may misidentify rare objects not in COCO
+
+Faster R-CNN is slower but more accurate
+
+RetinaNet is better for lightweight applications
+
+Image lighting and angles affect detection quality
+
+11. Conclusion
+
+This project demonstrates how modern computer vision models detect objects in everyday images.
+Faster R-CNN typically offers higher accuracy, while RetinaNet provides faster performance.
+Using both models allowed for a robust comparison of speed, precision, and confidence.
 
