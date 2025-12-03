@@ -92,21 +92,7 @@ Inference speed
 
 Qualitative accuracy (how correct were the detections?)
 
-7. Results
-
-(You will fill this in after running your loop.)
-
-Your document will include:
-
-A comparison table summarizing all images and detections
-
-Screenshots of predictions (optional, not required)
-
-A brief write-up such as:
-
-Faster R-CNN produced slightly more accurate detections with higher confidence, but RetinaNet ran faster. RetinaNet occasionally missed smaller objects that Faster R-CNN identified. Overall, Faster R-CNN was the most accurate model, while RetinaNet balanced speed and performance.
-
-8. Code Structure
+7. Code Structure
 /project
     ├── images/
     │     ├── img1.jpg
@@ -118,24 +104,8 @@ Faster R-CNN produced slightly more accurate detections with higher confidence, 
     ├── results.csv
     └── Final_Project.ipynb
 
-9. How to Run the Code
-1. Install dependencies
-pip install torch torchvision opencv-python pillow numpy
 
-2. Place your 10 images inside:
-/images/
-
-3. Run Final_Project.ipynb or the detection loop
-
-This will:
-
-Load both models
-
-Run predictions on all images
-
-Save outputs into results.csv
-
-10. Insights & Limitations
+8. Insights & Limitations
 
 Pretrained models may misidentify rare objects not in COCO
 
@@ -145,7 +115,7 @@ RetinaNet is better for lightweight applications
 
 Image lighting and angles affect detection quality
 
-11. Conclusion
+9. Conclusion
 
 This project demonstrates how modern computer vision models detect objects in everyday images.
 Faster R-CNN typically offers higher accuracy, while RetinaNet provides faster performance.
